@@ -17,19 +17,12 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
 
----
+[image2]: ./test_images_output/solidWhiteCurve.jpg_after.jpg
 
 ### Reflection
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
-My pipeline consisted of 5 steps. 
-
-* Convert the images to grayscale
-* Perform Gausian smoothing and apply Canny edge detection
-* Select region of interest and mask other areas of the image
-* Apply Hough Transform to detect lane lines
-* Superimpose the lane lines on the original image
+My pipeline consists of series of steps from taking image as an input to marking lane line in the image . At first convert the input image to gray scale ,then perform the guassian  smoothing to suppress the noise and apply the canny edge detection algorithm to detect the edges in the images .Then select the 4 vertices which is suitbale to area of intrest then mask other region in the image . Then apply the Hough transform to the image to detect lane lines.After detecting superimpose detected lane lines on the original image .
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by:
 * Calculated slope and center of each line. Then based on the slope, sort it into right or left lane line
